@@ -1,0 +1,206 @@
+/* ===================================
+DocNile - Blue Premium Theme (FINAL)
+Inspired by Hero Gradient (Image)
+=================================== */
+
+/* CSS Variables */
+:root {
+
+```
+/* 🎯 Background */
+--bg-primary: #020617;
+--bg-secondary: #020617;
+--bg-tertiary: #0f172a;
+
+/* 🔵 Primary Blue Theme */
+--accent: #3b82f6;
+--accent-dim: rgba(59, 130, 246, 0.15);
+--accent-glow: rgba(59, 130, 246, 0.4);
+
+--secondary: #0ea5e9;
+--secondary-dim: rgba(14, 165, 233, 0.15);
+
+/* ✨ Gradients */
+--gradient-accent: linear-gradient(135deg, #2563eb, #0ea5e9);
+--gradient-hero: linear-gradient(135deg, #020617, #0f172a, #1e3a8a);
+
+/* 🎨 Colors */
+--white: #ffffff;
+--white-80: rgba(255, 255, 255, 0.8);
+--white-60: rgba(255, 255, 255, 0.6);
+--white-40: rgba(255, 255, 255, 0.4);
+--white-20: rgba(255, 255, 255, 0.2);
+--white-10: rgba(255, 255, 255, 0.1);
+
+/* Glass */
+--glass-bg: rgba(255, 255, 255, 0.03);
+--glass-border: rgba(255, 255, 255, 0.08);
+
+/* Shadows */
+--shadow-glow: 0 0 40px rgba(14, 165, 233, 0.25);
+
+--font-family: 'Inter', sans-serif;
+```
+
+}
+
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: var(--font-family);
+background: var(--bg-primary);
+color: var(--white-80);
+}
+
+/* ===================================
+Navbar
+=================================== */
+.navbar {
+position: fixed;
+width: 100%;
+padding: 18px 0;
+background: rgba(2, 6, 23, 0.6);
+backdrop-filter: blur(20px);
+z-index: 1000;
+}
+
+.navbar.scrolled {
+background: rgba(2, 6, 23, 0.95);
+}
+
+.logo {
+font-weight: bold;
+font-size: 1.5rem;
+color: white;
+}
+
+/* ===================================
+HERO (🔥 MAIN PART)
+=================================== */
+.hero {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+
+```
+background: radial-gradient(circle at 15% 50%, rgba(30, 58, 138, 0.9), transparent 55%),
+            radial-gradient(circle at 85% 20%, rgba(14, 165, 233, 0.6), transparent 55%),
+            linear-gradient(135deg, #020617 0%, #020617 40%, #0f172a 100%);
+```
+
+}
+
+/* Glow Effects */
+.hero::before {
+content: "";
+position: absolute;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(30, 58, 138, 0.5), transparent 70%);
+filter: blur(80px);
+top: 50%;
+left: 20%;
+transform: translate(-50%, -50%);
+}
+
+.hero::after {
+content: "";
+position: absolute;
+width: 500px;
+height: 500px;
+background: radial-gradient(circle, rgba(14, 165, 233, 0.4), transparent 70%);
+filter: blur(80px);
+top: 30%;
+right: 10%;
+}
+
+/* Content */
+.hero-content {
+text-align: center;
+z-index: 2;
+}
+
+/* Title */
+.hero-tagline {
+font-size: 4rem;
+font-weight: 700;
+color: white;
+}
+
+/* Gradient Text */
+.gradient-text {
+background: linear-gradient(135deg, #60a5fa, #0ea5e9, #1e3a8a);
+background-size: 200% 200%;
+animation: gradientMove 6s ease infinite;
+
+```
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+```
+
+}
+
+/* Subtitle */
+.hero-description {
+margin-top: 16px;
+font-size: 1.2rem;
+color: var(--white-60);
+}
+
+/* ===================================
+BUTTONS
+=================================== */
+.btn {
+padding: 12px 28px;
+border-radius: 8px;
+border: none;
+cursor: pointer;
+}
+
+.btn-primary {
+background: linear-gradient(135deg, #2563eb, #0ea5e9);
+color: white;
+box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+box-shadow: 0 0 60px rgba(14, 165, 233, 0.6);
+}
+
+/* ===================================
+GLASS CARD
+=================================== */
+.glass-card {
+background: var(--glass-bg);
+backdrop-filter: blur(16px);
+border: 1px solid var(--glass-border);
+padding: 24px;
+border-radius: 16px;
+}
+
+/* ===================================
+ANIMATIONS
+=================================== */
+@keyframes gradientMove {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+/* ===================================
+RESPONSIVE
+=================================== */
+@media (max-width: 768px) {
+.hero-tagline {
+font-size: 2.2rem;
+}
+}
