@@ -200,6 +200,9 @@ ul { list-style: none; }
     gap: 8px;
     align-items: center;
 }
+.nav-links .d-md-none {
+    display: none;
+}
 
 .nav-links a {
     font-size: 0.9rem;
@@ -385,7 +388,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 0 80px;
+    padding: 113px 0 80px;
     position: relative;
 }
 
@@ -582,6 +585,7 @@ body {
     margin-bottom: 20px;
     background: var(--accent-dim);
     border: 1px solid rgba(0, 212, 170, 0.15);
+    display: none;
 }
 
 /* ===================================
@@ -643,6 +647,7 @@ body {
     font-weight: 800;
     color: var(--white-05);
     line-height: 1;
+    display: none
 }
 
 .service-features {
@@ -678,7 +683,7 @@ body {
 }
 
 .use-case-card {
-    padding-left: 60px;
+    /* padding-left: 60px; */
     position: relative;
 }
 
@@ -697,6 +702,7 @@ body {
     background: var(--accent-dim);
     border-radius: 8px;
     border: 1px solid rgba(0, 212, 170, 0.2);
+    display: none;
 }
 
 /* ===================================
@@ -1298,7 +1304,7 @@ body {
         right: 0;
         bottom: 0;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 8px;
         background: rgba(10, 10, 10, 0.98);
         backdrop-filter: blur(24px);
@@ -1306,8 +1312,14 @@ body {
         visibility: hidden;
         transition: var(--transition);
         padding: 24px;
+        height: 100vh;
     }
-
+    .nav-links .d-md-none {
+        display: block;
+    }
+    .nav-links.d-sm-none {
+        display: none;
+    }
     .nav-links.active {
         opacity: 1;
         visibility: visible;
